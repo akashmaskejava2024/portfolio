@@ -4,21 +4,24 @@ import { Github, Linkedin, Mail, ArrowDown } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section id="hero" className="min-h-[90vh] flex flex-col justify-center items-center relative pt-20">
+    <section id="hero" className="min-h-[90vh] flex flex-col justify-center items-center relative pt-20 w-full">
+      {/* Cyber Grid Background */}
+      <div className="absolute inset-0 w-full h-full bg-[linear-gradient(to_right,#06b6d410_1px,transparent_1px),linear-gradient(to_bottom,#10b98110_1px,transparent_1px)] bg-[size:32px_32px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_40%,#000_70%,transparent_100%)] z-0 pointer-events-none"></div>
+
 
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="text-center max-w-3xl z-10"
+        className="text-center max-w-3xl z-10 -mt-24"
       >
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.5 }}
-          className="text-accent-blue font-medium mb-4 tracking-wide"
+          className="text-accent-blue font-medium mb-4 tracking-wide font-mono"
         >
-          Welcome to my portfolio
+          &gt;_ Welcome to my portfolio
         </motion.p>
 
         <motion.h1
@@ -27,17 +30,18 @@ const Hero = () => {
           transition={{ delay: 0.3, duration: 0.8 }}
           className="text-5xl md:text-7xl font-bold mb-6 text-white leading-tight"
         >
-          Hi, I'm <span className="text-gradient">Akash Aba Maske</span>
+          Hi, I'm <span className="text-gradient relative z-10">Akash Maske</span>
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.8 }}
-          className="text-lg md:text-xl text-slate-400 mb-10 leading-relaxed"
+          className="text-lg md:text-xl text-slate-400 mb-10 leading-relaxed font-mono text-sm"
         >
-          Full Stack Developer specializing in Java, Spring Boot, and React.js.
-          Building scalable microservices and dynamic user interfaces.
+          // Scalable System Architect & Full Stack Developer
+          <br/>
+          Building distributed microservices and dynamic user interfaces.
         </motion.p>
 
         <motion.div
@@ -48,7 +52,7 @@ const Hero = () => {
         >
           <a
             href="#projects"
-            className="px-8 py-3 rounded-full bg-accent-blue hover:bg-accent-blue/90 text-white font-medium transition-all duration-300 shadow-[0_0_20px_rgba(59,130,246,0.3)] hover:shadow-[0_0_25px_rgba(59,130,246,0.5)] transform hover:-translate-y-1"
+            className="px-8 py-3 rounded-full bg-accent-blue hover:bg-accent-blue/90 text-[#050505] font-bold transition-all duration-300 shadow-[0_0_20px_rgba(16,185,129,0.4)] hover:shadow-[0_0_25px_rgba(16,185,129,0.6)] transform hover:-translate-y-1"
           >
             View My Work
           </a>

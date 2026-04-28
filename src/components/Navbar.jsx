@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Code2 } from 'lucide-react';
+import { Menu, X, Terminal } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const navItems = [
@@ -23,16 +23,14 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header 
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'glass py-4 shadow-lg' : 'bg-transparent py-6'
-      }`}
-    >
-      <div className="container mx-auto px-6 flex items-center justify-between">
+    <header className="fixed top-6 left-1/2 -translate-x-1/2 w-[95%] max-w-4xl z-50 transition-all duration-500">
+      <div className={`flex items-center justify-between px-6 py-3 rounded-full transition-all duration-500 ${
+        isScrolled ? 'bg-[#18181b]/70 backdrop-blur-2xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)]' : 'bg-white/5 backdrop-blur-md border border-white/5'
+      }`}>
         <a href="#" className="flex items-center gap-2 group">
-          <Code2 className="text-accent-blue group-hover:text-accent-purple transition-colors duration-300" size={28} />
-          <span className="font-bold text-xl tracking-tight text-white group-hover:text-gradient transition-all duration-300">
-            Akash.dev
+          <Terminal className="text-accent-blue group-hover:text-accent-purple transition-colors duration-300" size={28} />
+          <span className="font-bold text-xl tracking-tight text-white group-hover:text-gradient transition-all duration-300 font-mono">
+            Akash_Maske
           </span>
         </a>
 

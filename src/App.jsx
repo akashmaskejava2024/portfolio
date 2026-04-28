@@ -10,11 +10,7 @@ import Contact from './components/Contact';
 function App() {
   return (
     <div className="relative min-h-screen">
-      {/* Background elements */}
-      <div className="fixed inset-0 z-[-1] bg-background">
-        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-accent-blue/10 blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-accent-purple/10 blur-[120px] pointer-events-none" />
-      </div>
+      <div className="fixed inset-0 z-[-1] bg-background"></div>
 
       <Navbar />
       

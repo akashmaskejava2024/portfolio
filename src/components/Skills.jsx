@@ -24,6 +24,41 @@ const skillCategories = [
   }
 ];
 
+const getIconUrl = (skill) => {
+  const iconMap = {
+    "Java": "java/java-original.svg",
+    "JavaScript": "javascript/javascript-original.svg",
+    "SQL": "mysql/mysql-original.svg",
+    "HTML5": "html5/html5-original.svg",
+    "CSS3": "css3/css3-original.svg",
+    "Spring Boot": "spring/spring-original.svg",
+    "Spring MVC": "spring/spring-original.svg",
+    "Spring Security": "spring/spring-original.svg",
+    "Hibernate": "hibernate/hibernate-original.svg",
+    "JPA": "java/java-original.svg",
+    "Eureka Server": "spring/spring-original.svg",
+    "Swagger": "swagger/swagger-original.svg",
+    "Node.js": "nodejs/nodejs-original.svg",
+    "Express.js": "express/express-original.svg",
+    "React.js": "react/react-original.svg",
+    "Redux": "redux/redux-original.svg",
+    "HTML": "html5/html5-original.svg",
+    "CSS": "css3/css3-original.svg",
+    "Bootstrap": "bootstrap/bootstrap-original.svg",
+    "MySQL": "mysql/mysql-original.svg",
+    "MongoDB": "mongodb/mongodb-original.svg",
+    "Git": "git/git-original.svg",
+    "GitHub": "github/github-original.svg",
+    "Maven": "maven/maven-original.svg",
+    "Linux": "linux/linux-original.svg",
+    "AWS (EC2)": "amazonwebservices/amazonwebservices-original-wordmark.svg",
+    "Shell Scripting": "bash/bash-original.svg"
+  };
+  
+  const path = iconMap[skill];
+  return path ? `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${path}` : null;
+};
+
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -75,16 +110,20 @@ const Skills = () => {
                 viewport={{ once: true }}
                 className="flex flex-wrap gap-3"
               >
-                {category.skills.map((skill, skillIndex) => (
-                  <motion.span 
-                    key={skillIndex}
-                    variants={itemVariants}
-                    whileHover={{ scale: 1.05, y: -2 }}
-                    className="px-4 py-2 rounded-full text-sm font-medium bg-white/5 border border-white/10 text-slate-300 hover:text-white hover:border-accent-blue hover:bg-accent-blue/10 hover:shadow-[0_0_15px_rgba(59,130,246,0.3)] transition-all cursor-default"
-                  >
-                    {skill}
-                  </motion.span>
-                ))}
+                {category.skills.map((skill, skillIndex) => {
+                  const iconUrl = getIconUrl(skill);
+                  return (
+                    <motion.span 
+                      key={skillIndex}
+                      variants={itemVariants}
+                      whileHover={{ scale: 1.05, y: -2 }}
+                      className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-white/5 border border-white/10 text-slate-300 hover:text-white hover:border-accent-blue hover:bg-accent-blue/10 hover:shadow-[0_0_20px_rgba(16,185,129,0.4)] transition-all cursor-default"
+                    >
+                      {iconUrl && <img src={iconUrl} alt={skill} className="w-4 h-4 object-contain" />}
+                      {skill}
+                    </motion.span>
+                  );
+                })}
               </motion.div>
             </motion.div>
           ))}

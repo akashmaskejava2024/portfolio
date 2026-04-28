@@ -7,10 +7,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: '#0a0f1c', // deep navy background
+        background: '#050505', // extremely dark charcoal
         accent: {
-          blue: '#3b82f6', // neon blue
-          purple: '#8b5cf6', // electric purple
+          blue: '#10b981', // cyber emerald green
+          purple: '#06b6d4', // tech cyan
         }
       },
       fontFamily: {
