@@ -68,13 +68,19 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             className="glass-card rounded-3xl p-8 space-y-6"
-            onSubmit={(e) => e.preventDefault()}
+            action="https://formsubmit.co/akashmaske.java@gmail.com"
+            method="POST"
           >
+            <input type="hidden" name="_subject" value="New contact from Portfolio!" />
+            <input type="hidden" name="_captcha" value="false" />
+            
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-slate-400 mb-2">Name</label>
               <input 
                 type="text" 
                 id="name" 
+                name="name"
+                required
                 className="w-full bg-background/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent-blue focus:ring-1 focus:ring-accent-blue transition-colors"
                 placeholder="John Doe"
               />
@@ -84,6 +90,8 @@ const Contact = () => {
               <input 
                 type="email" 
                 id="email" 
+                name="email"
+                required
                 className="w-full bg-background/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent-purple focus:ring-1 focus:ring-accent-purple transition-colors"
                 placeholder="john@example.com"
               />
@@ -92,6 +100,8 @@ const Contact = () => {
               <label htmlFor="message" className="block text-sm font-medium text-slate-400 mb-2">Message</label>
               <textarea 
                 id="message" 
+                name="message"
+                required
                 rows="4"
                 className="w-full bg-background/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent-blue focus:ring-1 focus:ring-accent-blue transition-colors resize-none"
                 placeholder="Your message..."
