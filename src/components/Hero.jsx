@@ -40,8 +40,8 @@ const Hero = () => {
           className="text-lg md:text-xl text-slate-400 mb-10 leading-relaxed font-mono text-sm"
         >
           // Scalable System Architect & Full Stack Developer
-          <br/>
-          Building distributed microservices and dynamic user interfaces.
+          <br />
+          Building distributed microservice.
         </motion.p>
 
         <motion.div
